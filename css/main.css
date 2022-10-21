@@ -1,4 +1,4 @@
-:root {
+[data-theme="light"]{
     --theme-central: url("../img/fondo.jpeg");
     --theme-central-secundary: url("../img/teatro.jpg");
     --primary-color: #088A29;
@@ -7,7 +7,33 @@
     --text-color: #000;
     --text-color-inverse: #fff;
     --plus: #D7DBDD;
-    --plus-inverse: rgba(52, 73, 94, 0.8);
+    --plus-inverse: #34495E;
+    --scroll: #34495E;
+    --sun : #F1C40F;
+    --opacity-5: rgba(0,0,0,0.5);
+    --opacity-4: rgba(0,0,0,0.4);
+    --bg-footer: #333;
+    --white: #f8f8f8;
+    --shadow-d: 0 4px 5px #c4c4c4;
+}
+
+[data-theme="dark"]{
+    --theme-central: url("../img/fondo.jpeg");
+    --theme-central-secundary: url("../img/teatro.jpg");
+    --primary-color: #088A29;
+    --secundary-color: #13C313;
+    --menu-mobile-background-color: #0a0e17;
+    --text-color: #fff;
+    --text-color-inverse: #fff;
+    --plus: #D7DBDD;
+    --plus-inverse: #34495E;
+    --scroll: #D7DBDD;
+    --sun : #F1C40F;
+    --opacity-5: rgba(0,0,0,0.5);
+    --opacity-4: rgba(0,0,0,0.4);
+    --bg-footer: #333;
+    --white: #333;
+    --shadow-d: 0 4px 5px #615F5F ;
 }
 
 *{
@@ -32,7 +58,23 @@ body {
     /* padding-top: 80px; */
     font-family: 'Anek Latin', sans-serif;
     color: var(--text-color);
+    background-color: var(--white);
 }
+
+
+/*editar Scroll*/
+body::-webkit-scrollbar{
+    width: 10px;
+    background: none;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: var(--scroll);
+    border-radius: 6px;
+}
+
+
+
 
 a {text-decoration: none; }
 

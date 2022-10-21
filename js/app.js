@@ -1,38 +1,9 @@
-
-
-
-
 // NavBar 
 
 window.addEventListener("scroll", function(){
     var header = this.document.querySelector("header");
     header.classList.toggle("down",this.window.scrollY>0);
 })
-
-// CARTA PROYECTS
-const carta = document.querySelector(".carta-Descrip");
-const carta2 = document.querySelector(".carta-Descrip2");
-const carta3 = document.querySelector(".carta-Descrip3");
-const openCartBtn = document.querySelector(".cart-open");
-const openCartBtn2 = document.querySelector(".cart-open2");
-const openCartBtn3 = document.querySelector(".cart-open3");
-
-function toggleCart(){
-    carta.classList.toggle("hover");
-}
-
-function toggleCart2(){
-    carta2.classList.toggle("hover");
-}
-
-function toggleCart3(){
-    carta3.classList.toggle("hover");
-}
-
-openCartBtn.addEventListener("click", toggleCart);
-openCartBtn2.addEventListener("click", toggleCart2);
-openCartBtn3.addEventListener("click", toggleCart3);
-
 
 // MENU DE NAVBAR EN CELULAR 
 // que cierre y que habrá
@@ -42,10 +13,14 @@ const closeMenuBtn = document.querySelector(".nav-close");
 
 function toggleMenu(){
     menu.classList.toggle("menu_opened");
+};
+
+if (openMenuBtn) {
+    openMenuBtn.addEventListener("click", toggleMenu);
+    closeMenuBtn.addEventListener("click", toggleMenu);
 }
 
-openMenuBtn.addEventListener("click", toggleMenu);
-closeMenuBtn.addEventListener("click", toggleMenu);
+
 
 //---QUE SE CIERRE CUANDO HAGAS CLICK EN MOVILE---
 //---Y QUE SE MUESTRE EN EL NAV BAR EN EL QUE ESTAN---
@@ -76,3 +51,46 @@ menuLinks.forEach(menuLink =>{
         observer.observe(target);
     }
 });
+
+
+
+
+///////////////DARK MODE//////////////////
+
+const Cbutton1 = document.querySelector(".sun");
+const Cbutton2 = document.querySelector(".moon");
+const preferedColorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+const setTheme = (theme) => {
+	document.documentElement.setAttribute('data-theme',theme);
+	localStorage.setItem('theme', theme);
+}
+
+
+if (localStorage.getItem('theme') == "dark" ) {
+    document.querySelector(".sun").style.display = "none";
+    document.querySelector(".moon").style.display = "unset";
+}else{
+    document.querySelector(".moon").style.display = "none";
+    document.querySelector(".sun").style.display = "unset";
+}
+
+function moonChage(){
+    document.querySelector(".sun").style.display = "none";
+    document.querySelector(".moon").style.display = "unset";
+    setTheme("dark");
+}
+
+function sunChage(){
+    document.querySelector(".moon").style.display = "none";
+    document.querySelector(".sun").style.display = "unset";
+    setTheme("light");
+}
+
+Cbutton1.addEventListener("click", moonChage);
+Cbutton2.addEventListener("click", sunChage);
+
+setTheme(localStorage.getItem('theme') || preferedColorScheme);
+
+
+
+

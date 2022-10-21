@@ -5,21 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mundo Nuevo</title>
-    <link  rel="icon" href="/img/icono.png">
+    <link  rel="icon" href="img/icono.png">
     <!-- Normalize -->
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssnormalize/cssnormalize-min.css">
     <!-- Fin de Normalize -->
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
-    <link rel="stylesheet" type="text/css" href="/css/panel.css">
-    <link rel="stylesheet" type="text/css" href="/css/about.css">
-    <link rel="stylesheet" type="text/css" href="/css/proyects.css">
-    <link rel="stylesheet" type="text/css" href="/css/sponsor.css">
-    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="css/panel.css">
+    <link rel="stylesheet" type="text/css" href="css/about.css">
+    <link rel="stylesheet" type="text/css" href="css/proyects.css">
+    <link rel="stylesheet" type="text/css" href="css/sponsor.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@300&display=swap" rel="stylesheet">
-    <script defer src="/js/app.js"></script>
     <script src="https://kit.fontawesome.com/019b17adfa.js" crossorigin="anonymous"></script>
 
 </head>
@@ -28,16 +27,13 @@
     <!-- nav bar -->
     <header class="topheader">
         <nav class="nav">
-            <a class="logo">
-                <img src="/img/icono.png" alt="Sistema Academico">
+            <a class="logo" href="#">
+                <img src="img/icono.png" alt="Sistema Academico">
                 <div>
                     Mundo Nuevo<br>
                     <span>Institución</span>
                 </div>
             </a>
-            <button class="nav-open" aria-label="Abrir menú">
-                <i class="fa-solid fa-bars"></i>
-            </button>
             <ul class="nav-menu ">
                 <button class="nav-close" aria-label="Cerrar menú">
                     <i class="fa-solid fa-x"></i>
@@ -45,11 +41,25 @@
                 <li class="nav-menu-item"><a class="nav-menu-link activate" href="#panel">Inicio</a></li>
                 <li class="nav-menu-item"><a class="nav-menu-link" href="#about">Nosotros</a></li>
                 <li class="nav-menu-item"><a class="nav-menu-link" href="#proyects">Proyectos</a></li>
-                <!-- <li class="nav-menu-item"><a class="nav-menu-link" href="#sponsor">Gerentes</a></li> -->
                 <li class="nav-menu-item"><a class="nav-menu-link" href="#contacto">Contacto</a></li>
-                <li class="nav-menu-item"><a class="nav-menu-link fijo" href="#">Login</a></li>
-                
+                <li class="nav-menu-item"><a class="nav-menu-link fijo" href="">Login</a></li>
             </ul>
+            <div class="res">
+                <div class="button-change">
+                    <button class="sun">
+                        <!--sun-->
+                        <i class="fa-solid fa-sun"></i>
+                    </button>
+
+                    <button class="moon">
+                        <!--moon-->
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </div>
+                <button class="nav-open" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
         </nav>
     </header>
 
@@ -79,15 +89,15 @@
 
             <div class="wrap">
                 <div class="img-container">
-                    <img src="/img/student1.jpg">
+                    <img src="img/student1.jpg">
                     <div class="img-container-line"></div>
                 </div>
                 <div class="img-container">
-                    <img src="/img/student2.jpg">
+                    <img src="img/student2.jpg">
                     <div class="img-container-line"></div>
                 </div>
                 <div class="img-container">
-                    <img src="/img/student3.jpg">
+                    <img src="img/student3.jpg">
                     <div class="img-container-line"></div>
             </div>
         </div>
@@ -103,14 +113,17 @@
 
             <div class="carta-grid">
                 <div class="empty">
-                    <img src="/img/pro1.jpeg">
+                    <img src="img/pro1.jpeg">
                 </div>
-                <div class="line"></div>
-                <div class="carta">
-                    <div class="carta-Titulo imagen1">
-                        GATO ROBOTICO
-                        <button class="cart-open">+ Info</button>
-                        <div class="carta-Descrip ">
+                <div class="line"></div>                
+                <div class="carta-flip">
+                    <div class="card">
+                        <div class="carta-front image">
+                            GATO ROBOTICO
+                            <button class="cart-open">+ Info</button>
+                        </div>
+                        <div class="carta-back image">
+                            <!-- <button class="cart-close">X</button> -->
                             Creado con codigó C++ y Python. Construido sobre una plataforma de 
                             código abierto, Nybble tiene infinitas posibilidades en la forma en
                             que puede "enseñar" trucos, comportamientos y CAT-itude a medida que 
@@ -119,11 +132,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="carta">
-                    <div class="carta-Titulo imagen2">
-                        BRAZO BIONICO
-                        <button class="cart-open2">+ Info</button>
-                        <div class="carta-Descrip2">
+                <div class="carta-flip">
+                    <div class="card">
+                        <div class="carta-front image2">
+                            BRAZO BIONICO
+                            <button class="cart-open">+ Info</button>
+                        </div>
+                        <div class="carta-back image2">
                             Otro desarrollo prometedor lo están probando en la Universidad
                             Johns Hopkins. Uno de sus laboratorios ha creado un brazo robótico 
                             de nueva generación conectado al tronco por 26 puntos y capaz de 
@@ -133,14 +148,16 @@
                     </div>
                 </div>
                 <div class="line"></div>
-                <div class="empty"><img src="/img/pro2.jpg"></div>
-                <div class="empty"><img src="/img/pro3.jpg"></div>
+                <div class="empty"><img src="img/pro2.jpg"></div>
+                <div class="empty"><img src="img/pro3.jpg"></div>
                 <div class="line"></div>
-                <div class="carta">
-                    <div class="carta-Titulo imagen3">
-                        UDRONE
-                        <button class="cart-open3">+ Info</button>
-                        <div class="carta-Descrip3">
+                <div class="carta-flip">
+                    <div class="card">
+                        <div class="carta-front image3">
+                            UDRONE
+                            <button class="cart-open">+ Info</button>
+                        </div>
+                        <div class="carta-back image3">
                             Deseche sus controladores y teléfonos, ¡hay una nueva 
                             forma de volar un dron! ¡Esta semana, desempacamos el 
                             increíble dron controlado por la mente UDrone!
@@ -224,7 +241,7 @@
     <section id="contacto">
         <div class="container">
             <h3>No dudes en enviar un comentario, si tienes alguna mejora para nuestra pagina o deseas contactarnos</h3>
-            <form class="form" name="formulario-contacto" netlify>
+            <form class="form" method="POST" action="correo.php">
                 <div class="prueba">
                     <div class="form-section">
                         <input type="text" class="form-input" placeholder="Nombre" name="txtNombre" required>
@@ -250,16 +267,17 @@
     <!-- page pie -->
     <footer id="footer">
         <div class="container">
-            <a class="logo-footer" href="#panel">
+            <a class="logo-footer" href="#">
                 <div>
                     Mundo Nuevo<br>
                     <span>Institución</span>
                 </div>
-                <img src="/img/icono.png" alt="Sistema Academico">
+                <img src="img/icono.png" alt="Sistema Academico">
             </a>
             <b class="uno">&copy; 2022/06/16 Copyright | Diana Vargas Elescano </b>
             <b>Facebook |  Instagram | Twitter</b>
         </div>
     </footer>
+    <script src="js/app.js"></script>
 </body>
 </html>

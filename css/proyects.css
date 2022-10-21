@@ -7,8 +7,8 @@
     flex-direction: column;
     background-image: linear-gradient(
         0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
+        var(--opacity-5),
+        var(--opacity-5)
     ), var(--theme-central-secundary);
     background-position: center;
     background-repeat: no-repeat;
@@ -25,93 +25,6 @@
     text-align: center;
 }
 
-#proyects .carta{
-    max-width: 450px;
-    margin: 25px auto;
-    padding: 0 50px;
-}
-
-#proyects .carta-Titulo{
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    font-weight: bold;
-    color: var(--secundary-color);
-    box-shadow: 0 2px 6px 4px #ccc;
-    
-
-}
-
-#proyects .carta .imagen1{
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.3)
-    ),url("/img/pro1.jpeg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 200px;
-    /* padding: 0 5px; */
-}
-
-#proyects .carta .imagen2{
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.3)
-    ),url("/img/pro2.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 200px;
-    /* padding: 0 5px; */
-}
-
-#proyects .carta .imagen3{
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.3)
-    ),url("/img/pro3.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 200px;
-    /* padding: 0 5px; */
-}
-
-#proyects .carta button{
-    border: 2px solid var(--plus) ;
-    color: var(--plus);
-    margin: 10px 0;
-    padding: 5px 6px;
-    font-size: 20px;
-    font-weight: 650;
-    background: none ;
-    border-radius: 5px;
-}
-
-#proyects .carta button:hover{
-    border: 2px solid var(--plus) ;
-    color: var(--plus) ; 
-    background-color: var(--plus-inverse);
-}
-
-#proyects .carta-Descrip,
-#proyects .carta-Descrip2,
-#proyects .carta-Descrip3{
-    display: none;
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--text-color-inverse);
-    overflow: auto;
-    
-}
-
 #proyects .hover{
     display: block;
 }
@@ -126,63 +39,182 @@
     margin: 0 0;
 }
 
+/* ////////////EFECTO FLIP EN CARD /////////////// */
+
+#proyects .carta-flip{
+    max-width: 550px;
+    margin: 50px auto;
+    height: 200px;
+    padding: 0 50px;
+    perspective: 1000px;
+}
+
+    #proyects .card{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 1s;
+        transform-style: preserve-3d;
+    }
+
+        #proyects .carta-front, .carta-back{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            
+        }
+
+            #proyects .carta-front.image,.carta-back.image{
+                background-image: linear-gradient(
+                    0deg,
+                    var(--opacity-4),
+                    var(--opacity-4)
+                ),url("../img/pro1.jpeg");
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                box-shadow: 1px 1px 5px 2px var(--text-color-inverse);
+                padding: 10px;
+                overflow: auto;
+            }
+
+            #proyects .carta-front.image2,.carta-back.image2{
+                background-image: linear-gradient(
+                    0deg,
+                    var(--opacity-4),
+                    var(--opacity-4)
+                ),url("../img/pro2.jpg");
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                box-shadow: 1px 1px 5px 2px var(--text-color-inverse);
+                padding: 10px;
+                overflow: auto;
+            }
+
+            #proyects .carta-front.image3,.carta-back.image3{
+                background-image: linear-gradient(
+                    0deg,
+                    var(--opacity-4),
+                    var(--opacity-4)
+                ),url("../img/pro3.jpg");
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                box-shadow: 1px 1px 5px 2px var(--text-color-inverse);
+                padding: 10px;
+                overflow: auto;
+            }
+            
+                #proyects .carta-front{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    font-size: 25px;
+                    color: var(--secundary-color);
+                    font-weight: bold;
+                }
+
+                    #proyects .carta-back{
+                        transform: rotateY(180deg);
+                        padding: 5%;
+                        font-size: 20px;
+                    }
+
+                    #proyects .carta-back::-webkit-scrollbar{
+                        width: 8px;
+                        background-color: none;
+                    }
+
+                    #proyects .carta-back::-webkit-scrollbar-thumb{
+                        background-color: var(--plus);
+                        border-radius: 5px;
+                    }
+
+                        #proyects .card:hover{
+                            transform: rotateY(180deg);
+                        }
+
+                            #proyects .cart-open{
+                                border: 1.5px solid var(--plus) ;
+                                color: var(--plus);
+                                margin: 10px 0;
+                                padding: 5px 6px;
+                                font-size: 20px;
+                                font-weight: 650;
+                                background: none ;
+                                border-radius: 5px;
+                            }
+
+/* /////////////////////////// */
 
 
 @media (min-width: 750px) {
 
-    #proyects .carta{
-        padding: 0 0;
-        display: flex;
-        flex-direction: column;
-        align-items:center;
-        justify-content: center;
-        
-    }
-    
-    #proyects .carta-Titulo{
-        padding: 20px;
-        display: contents;
-        font-size: 25px;
-        font-weight: bold;
-        color: var(--secundary-color);
-        box-shadow: none;
-        text-align: center;
-        margin: 15px 2.5em;
-        
-    
-    }
-    
-    #proyects .carta .imagen1,
-    #proyects .carta .imagen2,
-    #proyects .carta .imagen3{
-        background: none;
-    }
-    
-    #proyects .carta button{
-        display: none;
-    }
-    
-    #proyects .carta button:hover{
-        border: 2px solid var(--plus) ;
-        color: var(--plus) ; 
-        background-color: var(--plus-inverse);
-    }
-    
-    #proyects .carta-Descrip,
-    #proyects .carta-Descrip2,
-    #proyects .carta-Descrip3{
-        display: block;
-        font-size: 18px;
-        font-weight: 500;
-        margin-top: 5px;
-        color: var(--text-color-inverse);
-        text-align: justify;
+
+    /* ///////////////////////// desacer efecto flip en grid ////////*/
+    #proyects .carta-flip{
         max-width: none;
-        overflow: none;
-        
+        margin: 50px 0;
+        height: 200px;
+        padding: 0;
     }
     
+        #proyects .card{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: none;
+            transform-style: none;
+        }
     
+            #proyects .carta-front, .carta-back{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                
+            }
+    
+                #proyects .carta-front.image,.carta-back.image,
+                #proyects .carta-front.image2,.carta-back.image2,
+                #proyects .carta-front.image3,.carta-back.image3{
+                    background: none;
+                    box-shadow: none;
+                    padding: 10px;
+                    overflow: unset;
+                    padding: 10px;
+                }
+                
+                    #proyects .carta-front{
+                        display: contents;
+                        font-size: 25px;
+                        color: var(--secundary-color);
+                        font-weight: bold;
+                    }
+    
+                        #proyects .carta-back{
+                            transform: none;
+                            padding: 10px 25px;
+                            font-size: 18px;
+                            text-align: justify;
+                        }
+    
+                            #proyects .card:hover{
+                                transform: none;
+                            }
+    
+                                #proyects .cart-open{
+                                    display: none;
+                                }
+
+    /* ///////////////////////// desacer efecto flip en grid ////////*/
+
+
 
     /*GRID*/
 
