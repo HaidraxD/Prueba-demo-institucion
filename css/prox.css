@@ -1,0 +1,19 @@
+.cont{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(#85A5AB,#89AAAE 90%);
+}
+
+.cont img{
+    width: 500px;
+    margin-top: 10%;
+}
+
+.cont h1{
+    padding: 20px 0;
+    font-size: 4em;
+    color: #fff;
+}
