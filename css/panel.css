@@ -16,17 +16,18 @@
     background-repeat: no-repeat;
     background-size: cover;
     margin: auto;
-    
+
 }
 
 #panel h1{
     font-size: 42px;
-    margin-bottom: 2px;
+    margin-bottom: 12px;
 }
 
 #panel p{
     font-size: 20px;
-    margin-top: 2px;
+    margin-top: 12px;
+
 }
 
 #panel hr{
@@ -40,6 +41,7 @@
     font-size: 20px;
     padding: 0.5em 1em;
     border-radius: 25px;
+    margin-top: 16px;
 }
 
 #panel .button:hover{
@@ -49,14 +51,12 @@
 @media (min-width: 750px){
     #panel h1{
         font-size: 60px;
-        margin-bottom: 2px;
     }
-    
+
     #panel p{
         font-size: 25px;
-        margin-top: 2px;
     }
-    
+
     #panel button{
         border: none;
         color: var(--text-color-inverse);
@@ -65,7 +65,7 @@
         padding: 0.5em 1em;
         border-radius: 25px;
     }
-    
+
     #panel button:hover{
         filter: brightness(130%); /* Aumenta el brillo*/
     }
